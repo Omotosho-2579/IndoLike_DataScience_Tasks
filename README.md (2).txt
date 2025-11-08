@@ -1,23 +1,23 @@
-# 🧠 Sentiment Analysis & Visualization on Twitter Data
+🧠 Sentiment Analysis & Visualization on Twitter Data
 
-## 📋 Project Overview
-This project performs **entity-level sentiment analysis** on Twitter data to understand **public opinion** and **attitudes** towards various topics, brands, or entities.  
-The dataset contains tweets labeled with sentiments such as **Positive**, **Negative**, **Neutral**, and **Irrelevant**.  
-For this analysis, *Irrelevant* tweets are treated as *Neutral* to simplify sentiment categories.
+📋 Project Overview
+This project performs entity-level sentiment analysis on Twitter data to understand public opinion and attitudes towards various topics, brands, or entities.  
+The dataset contains tweets labeled with sentiments such as Positive, Negative, Neutral, and Irrelevant.  
+For this analysis, *Irrelevant* tweets are treated as Neutral to simplify sentiment categories.
 
 The goal is to analyze and visualize patterns in social media sentiment, revealing how people perceive different entities and topics over time.
 
----
 
-## 🧾 Dataset Information
-- **Source:** [Kaggle - Twitter Entity Sentiment Analysis](https://www.kaggle.com/datasets/jp797498e/twitter-entity-sentiment-analysis)  
-- **Files Used:**
+🧾 Dataset Information
+ - Source: [Kaggle - Twitter Entity Sentiment Analysis](https://www.kaggle.com/datasets/jp797498e/twitter-entity-sentiment-analysis)  
+-  Files Used:
   - `twitter_training.csv.zip` → contains the main training dataset.
   - `twitter_validation.csv` → used for cross-checking trends and validation.
-- **Classes:**
+- Classes:
   - `Positive`
   - `Negative`
-  - `Neutral` (includes `Irrelevant` tweets)
+  - `Neutral` 
+  -  `Irrelevant` tweets
 
 Each record contains:
 | Column | Description |
@@ -29,62 +29,62 @@ Each record contains:
 
 ---
 
-## ⚙️ Tech Stack
-- **Language:** Python  
-- **Environment:** Google Colab / Jupyter Notebook  
-- **Libraries Used:**
+⚙️ Tech Stack
+- Language: Python  
+- Environment:** Google Colab / Jupyter Notebook  
+- Libraries Used:
   - `pandas`, `numpy` – data handling
   - `matplotlib`, `seaborn` – visualization
   - `wordcloud` – word frequency visualization
   - `sklearn` – text preprocessing and n-gram analysis
   - `re`, `string` – text cleaning utilities
 
----
 
-## 🚀 Project Workflow
 
-### 1️⃣ Load and Inspect Data
+🚀 Project Workflow
+
+ 1️⃣ Load and Inspect Data
 - Unzip and load `twitter_training.csv` and `twitter_validation.csv`.
 - Assign column names and review data structure.
 
-### 2️⃣ Data Cleaning
+ 2️⃣ Data Cleaning
 - Remove missing rows.
 - Clean tweets by removing:
   - URLs
   - Mentions (`@username`)
-  - Hashtags (`#topic`)
+  - Hashtags (`topic`)
   - Punctuation and special symbols
 - Convert text to lowercase.
-- Merge `Irrelevant` into `Neutral`.
 
-### 3️⃣ Sentiment Analysis & Visualization
+
+3️⃣ Sentiment Analysis & Visualization
 - Plot overall sentiment distribution.
 - Identify the most discussed entities.
 - Visualize sentiment breakdown for top entities.
 - Generate word clouds for each sentiment category.
 - Perform bigram (common two-word phrase) analysis for positive tweets.
 
-### 4️⃣ Validation (Optional)
+4️⃣ Validation (Optional)
 - Compare sentiment distribution with the validation dataset to confirm trends.
 
----
 
-## 📊 Visualizations
+
+📊 Visualizations
 Key insights are visualized through:
-- **Sentiment Distribution** – overall mood of public opinion.
-- **Entity Frequency Chart** – top 10 most discussed brands or topics.
-- **Entity–Sentiment Breakdown** – stacked bar charts showing positive vs. negative reactions.
-- **WordClouds** – common words for each sentiment category.
-- **Bigram Analysis** – frequent word combinations reflecting sentiment tone.
+- Sentiment Distribution – overall mood of public opinion.
+- Entity Frequency Chart – top 10 most discussed brands or topics.
+- Entity–Sentiment Breakdown – stacked bar charts showing positive vs. negative reactions.
+- WordClouds – common words for each sentiment category.
+- Bigram Analysis – frequent word combinations reflecting sentiment tone.
 
----
 
-## 📦 How to Run the Project
 
-### Step 1: Upload Files
+📦 How to Run the Project
+
+Step 1: Upload Files
 Upload `twitter_training.csv.zip` and `twitter_validation.csv` to your Google Colab environment.
 
-### Step 2: Unzip the Dataset
+Step 2: Unzip the Dataset
 ```python
 from zipfile import ZipFile
 with ZipFile("/content/twitter_training.csv.zip", 'r') as zip_ref:
